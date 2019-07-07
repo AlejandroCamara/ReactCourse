@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="App">
       <h1>Hi, I'm a React App</h1>
-      <Person />
-      <Person />
-      <Person />
+      <Person name="Max" age="28"/>
+      <Person name="Camara" age="22"> My hobbies: Videogames</Person>
+      <Person name="Hee Hee" age="35"/>
     </div>
   );
 
