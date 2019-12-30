@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Person from "./Person/Person";
 
-class App extends Component {
+class AppClass extends Component {
   state = {
     persons: [
       { name: "Max", age: "28" },
@@ -19,11 +19,12 @@ class App extends Component {
     console.log("Was clicked!");
     // Don't change the state directly!!!
     // this.state.persons[0].name = "Maximus";
+
     this.setState({
       persons: [
         { name: "Maximus", age: "28" },
-        { name: "Camara", age: "22" },
-        { name: "Hee Hee", age: "35" }
+        { name: "Camara", age: "23" },
+        { name: "Aiuwoki", age: "35" }
       ]
     });
   };
@@ -32,12 +33,24 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hi, I'm a React App</h1>
-        <Person name={this.state.persons[0]} age={this.state.persons[0]} />
-        <Person name={this.state.persons[1]} age={this.state.persons[1]}>
+        <button onClick={this.switchNameHandler}>Switch Name</button>
+        <Person
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age}
+        />
+        <Person
+          name={this.state.persons[1].name}
+          age={this.state.persons[1].age}
+        >
           My hobbies: Videogames
         </Person>
-        <Person name={this.state.persons[2]} age={this.state.persons[2]} />
+        <Person
+          name={this.state.persons[2].name}
+          age={this.state.persons[2].age}
+        />
       </div>
     );
   }
 }
+
+export default AppClass;
