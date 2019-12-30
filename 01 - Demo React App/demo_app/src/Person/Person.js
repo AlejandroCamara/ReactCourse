@@ -1,13 +1,15 @@
 import React from "react";
 
-const person = (props) => {
+// Stateless or Presentation component
+const person = props => {
   // Only single line statements or function calls inside {}
   return (
     <div>
-      <p>I'm {props.name} and I am {props.age} years old</p>
+      <p>
+        I'm {props.name} and I am {props.age} years old
+      </p>
       <p>{props.children}</p>
     </div>
-    
   );
 };
 
