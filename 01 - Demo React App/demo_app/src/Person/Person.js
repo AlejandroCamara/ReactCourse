@@ -2,7 +2,7 @@ import React from "react";
 import "./Person.css";
 
 // Stateless or Presentation component
-const person = props => {
+const person = (props) => {
   // Only single line statements or function calls inside {}
   return (
     <div className="Person">
