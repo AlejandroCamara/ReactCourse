@@ -15,14 +15,24 @@ class AppClass extends Component {
 
   // Needs to be written as a class property to allow 'this' keyword
   // refer to the class, instead the function.
-  switchNameHandler = () => {
+  switchNameHandler = newName => {
     console.log("Was clicked!");
     // Don't change the state directly!!!
     // this.state.persons[0].name = "Maximus";
 
     this.setState({
       persons: [
-        { name: "Maximus", age: "28" },
+        { name: newName, age: "28" },
+        { name: "Camara", age: "23" },
+        { name: "Aiuwoki", age: "35" }
+      ]
+    });
+  };
+
+  nameChangeHandler = event => {
+    this.setState({
+      persons: [
+        { name: event.target.value, age: "28" },
         { name: "Camara", age: "23" },
         { name: "Aiuwoki", age: "35" }
       ]
@@ -33,10 +43,19 @@ class AppClass extends Component {
     return (
       <div className="App">
         <h1>Hi, I'm a React App</h1>
-        <button onClick={this.switchNameHandler}>Switch Name</button>
+        {
+          // Send a function with parameters to another component with bind
+        }
+        <button onClick={this.switchNameHandler.bind(this, "Jojo")}>
+          Switch Name
+        </button>
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
+          // onClick function
+          click={this.switchNameHandler.bind(this, "Maximus")}
+          // onChange function
+          changed={this.nameChangeHandler}
         />
         <Person
           name={this.state.persons[1].name}
