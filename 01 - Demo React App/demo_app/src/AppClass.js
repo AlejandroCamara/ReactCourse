@@ -39,6 +39,15 @@ class AppClass extends Component {
     });
   };
 
+  // Inline CSS style
+  buttonStyle = {
+    backgroundColor: "white",
+    font: "inherit",
+    border: "1px solid purple",
+    padding: "8px",
+    cursor: "pointer"
+  };
+
   render() {
     return (
       <div className="App">
@@ -46,7 +55,10 @@ class AppClass extends Component {
         {
           // Send a function with parameters to another component with bind
         }
-        <button onClick={this.switchNameHandler.bind(this, "Jojo")}>
+        <button
+          style={this.buttonStyle}
+          onClick={this.switchNameHandler.bind(this, "Jojo")}
+        >
           Switch Name
         </button>
         <Person

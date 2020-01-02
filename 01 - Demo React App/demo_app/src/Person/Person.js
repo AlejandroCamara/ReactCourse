@@ -1,10 +1,11 @@
 import React from "react";
+import "./Person.css";
 
 // Stateless or Presentation component
 const person = props => {
   // Only single line statements or function calls inside {}
   return (
-    <div>
+    <div className="Person">
       <p onClick={props.click}>
         I'm {props.name} and I am {props.age} years old
       </p>
